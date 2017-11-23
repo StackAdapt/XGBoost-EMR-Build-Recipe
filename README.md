@@ -16,8 +16,8 @@ Do not install `cmake` from `yum`, as the version from yum repository is out of 
 	make
 	sudo make install
 ### install maven
-	sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-	sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+	wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+	sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 	sudo yum install -y apache-maven
 	mvn --version
 
@@ -35,6 +35,15 @@ Add enviroment variable for `JAVA_HOME`
 	export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk.x86_64
 Build the source from `maven`
 	cd jvm-packages
-	mvn package
+	mvn package -DskipTests
+
+### (Optional) Upload the newly-built jars to S3
+After the previous steps, there should be 8 jars built. Use command to list all of them, 
+    find . -name "\*.jar"
+You will need `xgboost4j-0.7-jar-with-dependencies.jar` and `xgboost4j-spark-0.7-jar-with-dependencies.jar`.
+Upload to S3 using command `aws s3 cp`
+
+
+  
 
 
