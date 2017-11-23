@@ -2,7 +2,7 @@
 
 This recipe will instruct how to use XGboost library on Apache Spark on AWS ElasticMapReduce 5.10
 
-## Build the jars
+## Install Dependencies
 First, ssh into an EMR EC2 instance, then
 
 
