@@ -43,7 +43,19 @@ After the previous steps, there should be 8 jars built. Use command to list all 
 You will need `xgboost4j-0.7-jar-with-dependencies.jar` and `xgboost4j-spark-0.7-jar-with-dependencies.jar`.
 Upload to S3 using command `aws s3 cp`
 
+## Use XGBoost in a SBT project
+First, copy the 2 jars into `*project*/lib`
+Then add the following lines to `build.sbt` file
 
-  
+	val xgboostSparkPath = "file://" + new File(".").getAbsolutePath + "/lib/xgboost4j-spark-0.7-jar-with-dependencies.jar"
+	val xgboostPath = "file://" + new File(".").getAbsolutePath + "/lib/xgboost4j-0.7-jar-with-dependencies.jar"
+	
+	libraryDependencies ++= Seq(
+	  "ml.dmlc" % "xgboost4j" % "0.7"  % "provided" from xgboostPath,
+  	  "ml.dmlc" % "xgboost4j-spark" % "0.7"  % "provided" from xgboostSparkPath
+	)
+
+After successfully executing all the previous steps, you can use XGBoost on an EMR Spark cluster.
+
 
 
