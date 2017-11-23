@@ -43,7 +43,7 @@ Build the source from `maven`
 After the previous steps, there should be 8 jars built. Use command to list all of them, 
     find . -name "\*.jar"
 You will need `xgboost4j-0.7-jar-with-dependencies.jar` and `xgboost4j-spark-0.7-jar-with-dependencies.jar`.
-Upload to S3 using command `aws s3 cp`
+Upload to S3 with command `aws s3 cp`
 
 ## Use XGBoost in a SBT project
 First, copy the 2 jars into `*project*/lib`
