@@ -32,8 +32,10 @@ Do not install `cmake` from `yum`, as the version from yum repository is out of 
 	
 ### Build XGBoost for Java (with JNI)
 Add enviroment variable for `JAVA_HOME`
+
 	export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk.x86_64
 Build the source from `maven`
+
 	cd jvm-packages
 	mvn package -DskipTests
 
