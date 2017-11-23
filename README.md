@@ -7,7 +7,7 @@ First, ssh into an EMR EC2 instance, then
 
 
 ### install cmake
-Do not install `cmake` from `yum`, as the version from yum repository is out of date (2.8 as opposed to 3.3+). Instead, build fomr source:
+Do not install `cmake` from `yum`, as the version from yum repository is out of date (2.8 as opposed to 3.3+). Instead, build from source:
 
 	wget https://cmake.org/files/v3.10/cmake-3.10.0.tar.gz
 	tar xzf cmake-3.10.0.tar.gz
